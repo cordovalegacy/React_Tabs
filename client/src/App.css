@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+  background: linear-gradient(60deg, royalblue, lightblue);
+  padding: 5%;
+}
+
+#tabs-container{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  border: 3px double black;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+#tab-buttons-wrapper{
+  display: flex;
+}
+
+.tabs{
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 2%;
+  flex: 1;
+  cursor: pointer;
+}
+
+.tabs:hover{
+  background: linear-gradient(60deg, gray, silver);
+  transition: 500ms;
+}
+
+#tab-content{
+  border: 2px ridge black;
+  border-radius: 15px;
+  margin-top: 10px;
+  background: linear-gradient(60deg, whitesmoke, silver);
+}
+
