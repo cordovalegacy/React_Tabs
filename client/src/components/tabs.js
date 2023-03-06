@@ -24,6 +24,10 @@ const Tabs = (props) => {
     console.log(tab[1])
     console.log(tab[2])
 
+    console.log(tab[0].oneClicked)
+    console.log(tab[1].twoClicked)
+    console.log(tab[2].threeClicked)
+
     return (
         <div id="tabs-container">
             <div id="tab-buttons-wrapper">
