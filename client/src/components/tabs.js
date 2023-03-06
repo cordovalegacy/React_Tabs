@@ -1,83 +1,62 @@
+import { useState } from "react"
+
 const Tabs = (props) => {
 
-    const { tab, setTab } = props
+    const [tabOne, setTabOne] = useState(true)
+    const [tabTwo, setTabTwo] = useState(false)
+    const [tabThree, setTabThree] = useState(false)
 
     const openTabOne = () => {
-        setTab(tab[0].oneClicked = true)
-        setTab(tab[1].twoClicked = false)
-        setTab(tab[2].threeClicked = false)
+        setTabOne(true)
+        setTabTwo(null)
+        setTabThree(null)
     }
 
     const openTabTwo = () => {
-        setTab(tab[0].oneClicked = false)
-        setTab(tab[1].twoClicked = true)
-        setTab(tab[2].threeClicked = false)
+        setTabOne(null)
+        setTabTwo(true)
+        setTabThree(null)
     }
 
     const openTabThree = () => {
-        setTab(tab[0].oneClicked = false)
-        setTab(tab[1].twoClicked = false)
-        setTab(tab[2].threeClicked = true)
+        setTabOne(null)
+        setTabTwo(null)
+        setTabThree(true)
     }
 
-    console.log(tab[0])
-    console.log(tab[1])
-    console.log(tab[2])
+    const tabMessage = {
+        messageOne : "This is tab one",
+        messageTwo : "This is tab two",
+        messageThree : "This is tab three",
+    }
 
-    console.log(tab[0].oneClicked)
-    console.log(tab[1].twoClicked)
-    console.log(tab[2].threeClicked)
 
     return (
         <div id="tabs-container">
             <div id="tab-buttons-wrapper">
                 <button
-                    onClick={() => openTabOne}
+                    onClick={openTabOne}
                     className="tabs"
                 >
                     <h3>Tab 1</h3>
                 </button>
                 <button
-                    onClick={() => openTabTwo}
+                    onClick={openTabTwo}
                     className="tabs"
                 >
                     <h3>Tab 2</h3>
                 </button>
                 <button
-                    onClick={() => openTabThree}
+                    onClick={openTabThree}
                     className="tabs"
                 >
                     <h3>Tab 3</h3>
                 </button>
             </div>
             <div id="tab-content">
-                {
-                    tab[0].oneClicked == true
-                        &&
-                        tab[1].twoClicked == false
-                        &&
-                        tab[2].threeClicked == false
-                        ?
-                        <p>{tab[0].tabOne}</p>
-                        : null}
-                {
-                    tab[0].oneClicked == false
-                        &&
-                        tab[1].twoClicked == true
-                        &&
-                        tab[2].threeClicked == false
-                        ?
-                        <p>{tab[1].tabTwo}</p>
-                        : null}
-                {
-                    tab[0].oneClicked == false
-                        &&
-                        tab[1].twoClicked == false
-                        &&
-                        tab[2].threeClicked == true
-                        ?
-                        <p>{tab[2].tabThree}</p>
-                        : null}
+                { tabOne ? <p>{tabMessage.messageOne}</p> : null}
+                { tabTwo ? <p>{tabMessage.messageTwo}</p> : null}
+                { tabThree ? <p>{tabMessage.messageThree}</p> : null}
             </div>
         </div>
     )
